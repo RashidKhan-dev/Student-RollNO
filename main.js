@@ -1,20 +1,21 @@
+var list = [["Rashid", 814293], ["Nowshad", 814242]];
 
-var students = [
-    { rollNo: 814842, name: "Rashid", course: "CS" },
-    { rollNo: 814843, name: "Nowshad", course: "Math" },
-    { rollNo: 814844, name: "Luqman", course: "Physics" },
-    { rollNo: 814845, name: "sajjad", course: "Chem" }
-];
-var inputRoll = prompt(parseInt("Please enter Student Roll Number:"));
+var name = prompt("Name:");
+var roll = Number(prompt("Roll:"));
+
 var found = false;
-for (var i = 0; i < students.length; i++) {
-    if (students[i].rollNo == inputRoll) {
-        alert("Student Found!\nName: " + students[i].name + "\nCourse: " + students[i].course);
+
+for (var i = 0; i < list.length; i++) {
+    if (
+        list[i][0].toLowerCase() == name.toLowerCase() &&
+        list[i][1] == roll
+    ) {
+        alert("Verify: done!");
         found = true;
-        break; 
+        break;
     }
 }
 
-if (found === false) {
-    alert("Error: Student with Roll No " + inputRoll + " not found.");
+if (!found) {
+    alert("Verify: Not found!");
 }
